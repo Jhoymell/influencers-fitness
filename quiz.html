@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Influencers del Fitness</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="estilo.css">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>Influencers del Fitness</h1>
+            <p class="subtitle">Inspiración para una vida fitness y saludable</p>
+            <div class="motivation">
+                <i class="fas fa-quote-left"></i> La disciplina es el puente entre las metas y los logros <i
+                    class="fas fa-quote-right"></i>
+            </div>
+            <button id="themeToggle" aria-label="Cambiar tema">🌙</button>
+        </header>
+
+        <div class="gallery">
+            <div class="featured-container">
+                <div class="featured-image-container">
+                    <img class="featured-image" id="featuredImage" src="https://thebarbell.com/wp-content/uploads/2023/07/cbum-workout-1068x885.png" alt="CBum">
+                </div>
+                <div class="featured-info">
+                    <div class="featured-name" id="featuredName">Chris Bumstead (CBum)</div>
+                    <p class="featured-desc" id="featuredDesc">5 veces Mr. Olympia Classic Physique, especialista en desarrollo muscular simétrico</p>
+                    <div class="featured-stats" id="featuredStats">
+                        <div class="stat"><i class="fas fa-trophy"></i> 5x Mr. Olympia</div>
+                        <div class="stat"><i class="fas fa-instagram"></i> @c_bumstead</div>
+                        <div class="stat"><i class="fas fa-dumbbell"></i> Classic Physique</div>
+                    </div>
+                    <div class="featured-socials" id="featuredSocials">
+                        <a href="https://instagram.com/cbum" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://youtube.com/@ChrisBumstead" target="_blank"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="thumbnails-container">
+                <button class="thumbnail active" data-index="0" aria-label="Chris Bumstead">
+                    <img src="https://thebarbell.com/wp-content/uploads/2023/07/cbum-workout-1068x885.png" alt="Chris Bumstead">
+                    <div class="image-title">Chris Bumstead (CBum)</div>
+                </button>
+
+                <button class="thumbnail" data-index="1" aria-label="Analis Cruz">
+                    <img src="https://i.ibb.co/0QmdcW3/Analis-Cruz-Wallpapers-Insta-Fit-Bio-4.jpg" alt="Analis Cruz">
+                    <div class="image-title">Analis Cruz</div>
+                </button>
+
+                <button class="thumbnail" data-index="2" aria-label="Bella Fernandez">
+                    <img src="https://craftcms-assets.playbookapp.io/creators/premium/bela-fernandez-app/_700x760_crop_center-center_none/bela-fernandez-post1-forweb.jpg" alt="Bella Fernandez">
+                    <div class="image-title">Bella Fernandez</div>
+                </button>
+            </div>
+        </div>
+
+        <footer>
+            <div class="social-icons">
+                <a href="https://www.instagram.com/ls.jhoymell_?igsh=cTV6a3duODc1bXR1" class="pulse" target="_blank" rel="noopener" title="Instagram del autor"><i class="fab fa-instagram"></i></a>
+            </div>
+            <p>© 2025 Fitness Inspiration | Motivación Fitness</p>
+            <p>Síguenos para más contenido de entrenamiento y nutrición</p>
+        </footer>
+    </div>
+
+    <script>
+        // Datos de los influencers
+        const influencers = [
+            {
+                name: "Chris Bumstead (CBum)",
+                image: "https://thebarbell.com/wp-content/uploads/2023/07/cbum-workout-1068x885.png",
+                desc: "5 veces Mr. Olympia Classic Physique, especialista en desarrollo muscular simétrico",
+                stats: [
+                    '<div class="stat"><i class="fas fa-trophy"></i> 5x Mr. Olympia</div>',
+                    '<div class="stat"><i class="fas fa-instagram"></i> @c_bumstead</div>',
+                    '<div class="stat"><i class="fas fa-dumbbell"></i> Classic Physique</div>'
+                ],
+                socials: [
+                    '<a href="https://instagram.com/cbum" target="_blank"><i class="fab fa-instagram"></i></a>',
+                    '<a href="https://youtube.com/@ChrisBumstead" target="_blank"><i class="fab fa-youtube"></i></a>'
+                ]
+            },
+            {
+                name: "Analis Cruz",
+                image: "https://i.ibb.co/0QmdcW3/Analis-Cruz-Wallpapers-Insta-Fit-Bio-4.jpg",
+                desc: "Entrenadora fitness, modelo y motivadora. Promueve el bienestar físico y mental.",
+                stats: [
+                    '<div class="stat"><i class="fas fa-trophy"></i> IFBB Pro Bikini</div>',
+                    '<div class="stat"><i class="fas fa-instagram"></i> @analiscruzfit</div>',
+                    '<div class="stat"><i class="fas fa-dumbbell"></i> Bikini Fitness</div>'
+                ],
+                socials: [
+                    '<a href="https://instagram.com/analiscruzfit" target="_blank"><i class="fab fa-instagram"></i></a>',
+                    '<a href="https://tiktok.com/@analiscruzfit" target="_blank"><i class="fab fa-tiktok"></i></a>'
+                ]
+            },
+            {
+                name: "Bella Fernandez (Belcast)",
+                image: "https://craftcms-assets.playbookapp.io/creators/premium/bela-fernandez-app/_700x760_crop_center-center_none/bela-fernandez-post1-forweb.jpg",
+                desc: "Influencer fitness, coach y creadora de contenido sobre vida saludable.",
+                stats: [
+                    '<div class="stat"><i class="fas fa-trophy"></i> Coach Certificada</div>',
+                    '<div class="stat"><i class="fas fa-instagram"></i> @belcastfit</div>',
+                    '<div class="stat"><i class="fas fa-dumbbell"></i> Fitness Coach</div>'
+                ],
+                socials: [
+                    '<a href="https://instagram.com/belcastfit" target="_blank"><i class="fab fa-instagram"></i></a>',
+                    '<a href="https://facebook.com/belcastfit" target="_blank"><i class="fab fa-facebook"></i></a>'
+                ]
+            }
+        ];
+
+        // Selección de elementos
+        const featuredImage = document.getElementById('featuredImage');
+        const featuredName = document.getElementById('featuredName');
+        const featuredDesc = document.getElementById('featuredDesc');
+        const featuredStats = document.getElementById('featuredStats');
+        const featuredSocials = document.getElementById('featuredSocials');
+        const thumbnails = document.querySelectorAll('.thumbnail');
+        const themeToggle = document.getElementById('themeToggle');
+
+        // Cambia la info principal según el influencer seleccionado
+        function showInfluencer(index) {
+            const inf = influencers[index];
+            
+            // Aplicar efecto de transición
+            featuredImage.style.opacity = 0;
+            setTimeout(() => {
+                featuredImage.src = inf.image;
+                featuredImage.alt = inf.name;
+                featuredImage.style.opacity = 1;
+            }, 300);
+            
+            featuredName.textContent = inf.name;
+            featuredDesc.textContent = inf.desc;
+            featuredStats.innerHTML = inf.stats.join('');
+            featuredSocials.innerHTML = inf.socials.join('');
+            
+            // Actualizar clase activa
+            thumbnails.forEach(t => t.classList.remove('active'));
+            thumbnails[index].classList.add('active');
+        }
+
+        // Inicializar con el primero activo
+        showInfluencer(0);
+
+        // Efecto de transición suave
+        featuredImage.style.transition = 'opacity 0.4s';
+
+        // Evento para cada miniatura
+        thumbnails.forEach((thumb, idx) => {
+            thumb.addEventListener('click', () => {
+                showInfluencer(idx);
+            });
+            
+            
+            thumb.addEventListener('keydown', e => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    showInfluencer(idx);
+                }
+            });
+        });
+
+        // Tema claro/oscuro
+        function setTheme(dark) {
+            if (dark) {
+                document.body.classList.add('dark-theme');
+                themeToggle.textContent = '☀️';
+            } else {
+                document.body.classList.remove('dark-theme');
+                themeToggle.textContent = '🌙';
+            }
+        }
+        
+        // Verificar si hay una preferencia guardada
+        let darkMode = localStorage.getItem('darkMode') === 'true';
+        if (localStorage.getItem('darkMode') === null) {
+            // Preferencia inicial: modo oscuro
+            darkMode = true;
+        }
+        
+        themeToggle.addEventListener('click', () => {
+            darkMode = !darkMode;
+            localStorage.setItem('darkMode', darkMode);
+            setTheme(darkMode);
+        });
+        
+        // Aplicar tema al cargar
+        setTheme(darkMode);
+    </script>
+</body>
+</html>
